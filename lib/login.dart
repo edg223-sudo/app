@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'custom_button.dart';
-import 'background.dart'; // Fondo diagonal
+import 'background.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -15,7 +15,6 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // 🔠 Título
                 Stack(
                   children: [
                     Text(
@@ -43,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 50),
 
-                // 🧾 Campos con labelText dentro
+                
                 _buildField("Nombre"),
                 const SizedBox(height: 15),
                 _buildField("Correo"),
@@ -53,7 +52,7 @@ class LoginScreen extends StatelessWidget {
                 _buildField("Confirmar contraseña", obscure: true),
                 const SizedBox(height: 40),
 
-                // 🔘 Botones
+                
                 CustomButton(
                   text: "Iniciar Sesión",
                   onPressed: () {

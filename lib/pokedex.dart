@@ -8,7 +8,6 @@ class PokedexScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final random = Random();
 
-    // Generamos 22 botones (4x5 menos 3)
     final List<int> ids = List.generate(22, (_) => random.nextInt(999) + 1);
 
     return Scaffold(
@@ -19,7 +18,6 @@ class PokedexScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // 🔹 Título POKEDEX
               const Text(
                 "POKEDEX",
                 style: TextStyle(
@@ -31,7 +29,6 @@ class PokedexScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // 🔹 Barra de búsqueda y botón circular en la misma fila
               Row(
                 children: [
                   Expanded(
@@ -75,7 +72,6 @@ class PokedexScreen extends StatelessWidget {
               ),
               const SizedBox(height: 25),
 
-              // 🔹 Cuadro blanco con grid de botones
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.all(10),
@@ -85,7 +81,7 @@ class PokedexScreen extends StatelessWidget {
                     border: Border.all(color: Colors.black, width: 3),
                   ),
                   child: GridView.builder(
-                    itemCount: 25, // total 4x5 + 3 faltantes
+                    itemCount: 25,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 5,
@@ -93,7 +89,6 @@ class PokedexScreen extends StatelessWidget {
                       mainAxisSpacing: 8,
                     ),
                     itemBuilder: (context, index) {
-                      // Últimos 3 vacíos
                       if (index >= 22) {
                         return const SizedBox.shrink();
                       }
@@ -111,7 +106,6 @@ class PokedexScreen extends StatelessWidget {
     );
   }
 
-  // 🧩 Widget individual del bloque
   Widget _buildPokemonCard(int id) {
     return Container(
       decoration: BoxDecoration(
@@ -121,7 +115,6 @@ class PokedexScreen extends StatelessWidget {
       ),
       child: Stack(
         children: [
-          // Número arriba a la derecha
           Positioned(
             top: 4,
             right: 6,
@@ -134,7 +127,6 @@ class PokedexScreen extends StatelessWidget {
               ),
             ),
           ),
-          // Signo de pregunta al centro
           const Center(
             child: Text(
               "?",

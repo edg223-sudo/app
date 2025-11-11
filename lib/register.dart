@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'custom_button.dart';
-import 'background.dart'; // Fondo diagonal
+import 'background.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -15,7 +15,6 @@ class RegisterScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // 🔠 Título
                 Stack(
                   children: [
                     Text(
@@ -43,7 +42,6 @@ class RegisterScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 50),
 
-                // 🧾 Campos con labelText
                 _buildField("Nombre"),
                 const SizedBox(height: 15),
                 _buildField("Usuario"),
@@ -61,7 +59,6 @@ class RegisterScreen extends StatelessWidget {
                 _buildField("Instituto"),
                 const SizedBox(height: 40),
 
-                // 🔘 Botones
                 CustomButton(
                   text: "Crear Cuenta",
                   onPressed: () {
